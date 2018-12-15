@@ -53,6 +53,8 @@ test_dict = {
     "default": ""
 }
 
+test_dict_list = []
+
 context_dict = {}
 
 token = '581160657:AAF4_D69PkS3-0yoS9Exw7pEE3-anFx8FNs'

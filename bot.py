@@ -4,7 +4,6 @@ import data_base
 import telebot
 from telebot import types
 
-
 bot = telebot.TeleBot(data_base.token)
 
 

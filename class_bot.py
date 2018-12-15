@@ -3,7 +3,8 @@ import re
 import requests
 from bs4 import BeautifulSoup
 import random
-import telebot
+import json
+import time
 
 
 json_list = data_base.base_1
@@ -65,6 +66,11 @@ class Bot:
         if flag == False:
             response_dict['default'] = "1"
         data_base.test_dict = response_dict
+        data_base.test_dict_list.append(response_dict)
+        if len(data_base.test_dict_list) >= 20:
+            with open("%s.json" % str(time.time()), 'wt', encoding='utf8') as file:
+                json.dump(data_base.test_dict_list, file, ensure_ascii=False)
+            data_base.test_dict_list.clear()
 
     def pars_json(self):
         bot = self.bot
