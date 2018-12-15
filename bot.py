@@ -3,7 +3,6 @@ import json
 import data_base
 import telebot
 from telebot import types
-#vndjfkvnkdfnvkdnfvk
 
 bot = telebot.TeleBot(data_base.token)
 
