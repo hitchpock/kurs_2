@@ -29,8 +29,8 @@ def find_weather(city, message, bot):
 
 def dump(response_dict):
     data_base.test_dict_list.append(response_dict)
-    if len(data_base.test_dict_list) >= 20:
-        with open("%s.json" % str(time.time()), 'wt', encoding='utf8') as file:
+    if len(data_base.test_dict_list) >= 5:
+        with open("Data/%s.json" % str(time.time()), 'wt', encoding='utf8') as file:
             json.dump(data_base.test_dict_list, file, ensure_ascii=False)
         data_base.test_dict_list.clear()
 
@@ -74,7 +74,7 @@ class Bot:
         if flag == False:
             response_dict['default'] = "1"
         data_base.test_dict = response_dict
-        dump(data_base)
+        dump(response_dict)
 
     def pars_json(self):
         bot = self.bot
