@@ -27,6 +27,14 @@ def find_weather(city, message, bot):
                      "\n\t(По данным Яндекса)")
 
 
+def dump(response_dict):
+    data_base.test_dict_list.append(response_dict)
+    if len(data_base.test_dict_list) >= 20:
+        with open("%s.json" % str(time.time()), 'wt', encoding='utf8') as file:
+            json.dump(data_base.test_dict_list, file, ensure_ascii=False)
+        data_base.test_dict_list.clear()
+
+
 class Bot:
     def __init__(self, message, text, bot):
         self.message = message
@@ -66,11 +74,7 @@ class Bot:
         if flag == False:
             response_dict['default'] = "1"
         data_base.test_dict = response_dict
-        data_base.test_dict_list.append(response_dict)
-        if len(data_base.test_dict_list) >= 20:
-            with open("%s.json" % str(time.time()), 'wt', encoding='utf8') as file:
-                json.dump(data_base.test_dict_list, file, ensure_ascii=False)
-            data_base.test_dict_list.clear()
+        dump(data_base)
 
     def pars_json(self):
         bot = self.bot
