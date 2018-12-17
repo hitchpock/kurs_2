@@ -9,8 +9,6 @@ import time
 
 json_list = data_base.base_1
 response_list = data_base.base_2
-json_path = 'test_json.json'
-template_path = 'template_json.json'
 
 
 def find_weather(city, message, bot):
@@ -42,7 +40,7 @@ class Bot:
         self.context = data_base.context_dict[message.chat.id] if message.chat.id in data_base.context_dict else ""
         self.bot = bot
 
-    def create_json(self):
+    def create_dict(self):
         response_dict = data_base.template_dict
         for k, v in response_dict.items():
             response_dict[k] = ""
@@ -77,7 +75,7 @@ class Bot:
         data_base.dict_list[self.message.chat.id] = response_dict
         dump(response_dict)
 
-    def pars_json(self):
+    def pars_dict(self):
         bot = self.bot
         message = self.message
         response_dict = data_base.dict_list[self.message.chat.id]

@@ -13,8 +13,8 @@ def text_message(message):
     text_obj = Bot(message=message, text=text, bot=bot)
     print(type(message.chat.id))
     print(str(message.chat.id))
-    text_obj.create_json()
-    text_obj.pars_json()
+    text_obj.create_dict()
+    text_obj.pars_dict()
 
 
 bot.polling(none_stop=True, interval=0, timeout=0)
