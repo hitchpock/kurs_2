@@ -74,12 +74,13 @@ class Bot:
         if flag == False:
             response_dict['default'] = "1"
         data_base.test_dict = response_dict
+        data_base.dict_list[self.message.chat.id] = response_dict
         dump(response_dict)
 
     def pars_json(self):
         bot = self.bot
         message = self.message
-        response_dict = data_base.test_dict
+        response_dict = data_base.dict_list[self.message.chat.id]
         action = response_dict['action']
         additional = response_dict['additional']
         speech = response_dict['speech']

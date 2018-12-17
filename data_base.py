@@ -53,6 +53,8 @@ test_dict = {
     "default": ""
 }
 
+dict_list = {}
+
 test_dict_list = []
 
 context_dict = {}
