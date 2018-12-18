@@ -37,6 +37,7 @@ def dump(response_dict):
 
 
 def parsing_string(text, chat_id, context, response_dict):
+    """Парсинг текстового файла"""
     for k, v in response_dict.items():
         response_dict[k] = ""
     flag = False
@@ -111,4 +112,3 @@ class Bot:
         # Ответ на непонятное предложение
         elif response_dict['default'] == "1":
             bot.send_message(message.chat.id, random.choice(response_list[1]['pust']))
-
