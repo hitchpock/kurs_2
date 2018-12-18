@@ -5,6 +5,7 @@ from bs4 import BeautifulSoup
 import random
 import json
 import time
+import doctest
 
 
 json_list = data_base.base_1
@@ -12,6 +13,7 @@ response_list = data_base.base_2
 
 
 def find_weather(city, message, bot):
+    """Функция поиска погоды"""
     url = 'https://yandex.ru/pogoda/'
     response = requests.get(url + str(city)).text
     soup = BeautifulSoup(response, 'html.parser')
@@ -26,13 +28,14 @@ def find_weather(city, message, bot):
 
 
 def dump(response_dict):
+    """Фнкция сброса данных в папка Data"""
     data_base.test_dict_list.append(response_dict)
     if len(data_base.test_dict_list) >= 5:
         with open("Data/%s.json" % str(time.time()), 'wt', encoding='utf8') as file:
             json.dump(data_base.test_dict_list, file, ensure_ascii=False)
         data_base.test_dict_list.clear()
 
-
+#ldfkvfdmlvm
 class Bot:
     def __init__(self, message, text, bot):
         self.message = message
@@ -41,25 +44,32 @@ class Bot:
         self.bot = bot
 
     def create_dict(self):
+        # """
+        # Метод парсинга строки
+        #
+        # >>> a = Bot(text='dksnckjdsnc')
+        # >>> a.create_dict()
+        # {"action": "", "additional": "", "context_action": "", "speech": "", "default": "0"}
+        # """
         response_dict = data_base.template_dict
         for k, v in response_dict.items():
             response_dict[k] = ""
         flag = False
-        '''Находим, есть ли во введенной строке какое-нибудь значение словаря'''
+        # Находим, есть ли во введенной строке какое-нибудь значение словаря
         for dictionary in json_list:
             for key, val in dictionary.items():
                 for val_1 in val:
                     result = re.search(val_1, self.text)
                     if result is not None:
-                        '''Если есть значение принадлежащее любому ключу, то проверяем на принадлежность к action'''
+                        # Если есть значение принадлежащее любому ключу, то проверяем на принадлежность к action
                         temp_dict = data_base.template_dict
                         if key in json_list[1]['action']:
                             response_dict['action'] = key
-                            '''Создание контекста'''
+                            # Создание контекста
                             if self.context == "" or self.context != response_dict['action']:
                                 temp_dict['context_action'] = key
                                 data_base.context_dict[self.message.chat.id] = key
-                        '''... принадлежность к additional'''
+                        # ... принадлежность к additional
                         if key in json_list[2]['city']:
                             response_dict['additional'] = 'city'
                             response_dict['city'] = key
@@ -74,11 +84,13 @@ class Bot:
         data_base.test_dict = response_dict
         data_base.dict_list[self.message.chat.id] = response_dict
         dump(response_dict)
+        return response_dict
 
-    def pars_dict(self):
+    def pars_dict(self, dct):
+        """Метод разбора словаря"""
         bot = self.bot
         message = self.message
-        response_dict = data_base.dict_list[self.message.chat.id]
+        response_dict = dct
         action = response_dict['action']
         additional = response_dict['additional']
         speech = response_dict['speech']
@@ -100,3 +112,4 @@ class Bot:
         # Ответ на непонятное предложение
         elif response_dict['default'] == "1":
             bot.send_message(message.chat.id, random.choice(response_list[1]['pust']))
+
