@@ -35,7 +35,7 @@ def dump(response_dict):
             json.dump(data_base.test_dict_list, file, ensure_ascii=False)
         data_base.test_dict_list.clear()
 
-#ldfkvfdmlvm
+
 class Bot:
     def __init__(self, message, text, bot):
         self.message = message
