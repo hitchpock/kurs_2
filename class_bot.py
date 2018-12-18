@@ -36,6 +36,38 @@ def dump(response_dict):
         data_base.test_dict_list.clear()
 
 
+def parsing_string(text, chat_id, context, response_dict):
+    for k, v in response_dict.items():
+        response_dict[k] = ""
+    flag = False
+    for dictionary in json_list:
+        for key, val in dictionary.items():
+            for val_1 in val:
+                result = re.search(val_1, text)
+                if result is not None:
+                    # Если есть значение принадлежащее любому ключу, то проверяем на принадлежность к action
+                    temp_dict = data_base.template_dict
+                    if key in json_list[1]['action']:
+                        response_dict['action'] = key
+                        # Создание контекста
+                        if context == "" or context != response_dict['action']:
+                            temp_dict['context_action'] = key
+                            data_base.context_dict[chat_id] = key
+                    # ... принадлежность к additional
+                    if key in json_list[2]['city']:
+                        response_dict['additional'] = 'city'
+                        response_dict['city'] = key
+                    if key in json_list[0]:
+                        response_dict['speech'] = key
+    for k, v in response_dict.items():
+        if k != 'context_action':
+            if response_dict[k] != '':
+                flag = True
+    if flag == False:
+        response_dict['default'] = "1"
+    return response_dict
+
+
 class Bot:
     def __init__(self, message, text, bot):
         self.message = message
@@ -44,43 +76,10 @@ class Bot:
         self.bot = bot
 
     def create_dict(self):
-        # """
-        # Метод парсинга строки
-        #
-        # >>> a = Bot(text='dksnckjdsnc')
-        # >>> a.create_dict()
-        # {"action": "", "additional": "", "context_action": "", "speech": "", "default": "0"}
-        # """
+        """Метод парсинга строки"""
         response_dict = data_base.template_dict
-        for k, v in response_dict.items():
-            response_dict[k] = ""
-        flag = False
         # Находим, есть ли во введенной строке какое-нибудь значение словаря
-        for dictionary in json_list:
-            for key, val in dictionary.items():
-                for val_1 in val:
-                    result = re.search(val_1, self.text)
-                    if result is not None:
-                        # Если есть значение принадлежащее любому ключу, то проверяем на принадлежность к action
-                        temp_dict = data_base.template_dict
-                        if key in json_list[1]['action']:
-                            response_dict['action'] = key
-                            # Создание контекста
-                            if self.context == "" or self.context != response_dict['action']:
-                                temp_dict['context_action'] = key
-                                data_base.context_dict[self.message.chat.id] = key
-                        # ... принадлежность к additional
-                        if key in json_list[2]['city']:
-                            response_dict['additional'] = 'city'
-                            response_dict['city'] = key
-                        if key in json_list[0]:
-                            response_dict['speech'] = key
-        for k, v in response_dict.items():
-            if k != 'context_action':
-                if response_dict[k] != '':
-                    flag = True
-        if flag == False:
-            response_dict['default'] = "1"
+        response_dict = parsing_string(self.text, self.message.chat.id, self.context, response_dict)
         data_base.test_dict = response_dict
         data_base.dict_list[self.message.chat.id] = response_dict
         dump(response_dict)

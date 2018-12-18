@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55fbf67c-0312-47a2-8a92-984ac55eaa57" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/bot.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/class_bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/class_bot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,7 +13,8 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/kurs_4_10$pyt.coverage" NAME="pyt Coverage Results" MODIFIED="1545141082349" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/kurs_4_10$pyt.coverage" NAME="pyt Coverage Results" MODIFIED="1545142786484" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/kurs_4_10$Unittests_in_test_py.coverage" NAME="Unittests in test.py Coverage Results" MODIFIED="1545142739548" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/kurs_4_10$Unittests_for_test_TestBot.coverage" NAME="Unittests for test.TestBot Coverage Results" MODIFIED="1545141569157" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FUSProjectUsageTrigger">
@@ -36,7 +36,7 @@
         <counts>
           <entry key="Bot" value="1" />
           <entry key="json" value="6" />
-          <entry key="py" value="6" />
+          <entry key="py" value="7" />
           <entry key="txt" value="2" />
         </counts>
       </usages-collector>
@@ -44,14 +44,14 @@
         <counts>
           <entry key="JSON" value="6" />
           <entry key="PLAIN_TEXT" value="2" />
-          <entry key="Python" value="6" />
+          <entry key="Python" value="7" />
           <entry key="UML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="json" value="1" />
-          <entry key="py" value="1301" />
+          <entry key="py" value="1530" />
           <entry key="txt" value="28" />
         </counts>
       </usages-collector>
@@ -59,7 +59,7 @@
         <counts>
           <entry key="JSON" value="1" />
           <entry key="PLAIN_TEXT" value="28" />
-          <entry key="Python" value="1301" />
+          <entry key="Python" value="1530" />
         </counts>
       </usages-collector>
     </session>
@@ -81,11 +81,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/class_bot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="37" column="12" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="12" />
+            <state relative-caret-position="388">
+              <caret line="95" column="38" lean-forward="true" selection-start-line="95" selection-start-column="38" selection-end-line="95" selection-end-column="38" />
               <folding>
                 <element signature="e#0#16#0" expanded="true" />
-                <marker date="1545141940203" expanded="true" signature="1454:1469" ph="..." />
+                <marker date="1545142783270" expanded="true" signature="1601:2867" ph="..." />
               </folding>
             </state>
           </provider>
@@ -94,11 +94,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="21">
-              <caret line="1" column="25" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
+            <state relative-caret-position="168">
+              <caret line="8" column="112" selection-start-line="8" selection-start-column="112" selection-end-line="8" selection-end-column="112" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
-                <marker date="1545141524846" expanded="true" signature="77:82" ph="..." />
               </folding>
             </state>
           </provider>
@@ -213,7 +212,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests for test.TestBot">
+  <component name="RunManager" selected="Python.pyt">
     <configuration name="pyt" type="PythonConfigurationType" factoryName="Python">
       <module name="kurs_4.10" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -251,12 +250,29 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
+    <configuration name="Unittests in test.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="kurs_4.10" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/test.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Python.pyt" />
       <item itemvalue="Python tests.Unittests for test.TestBot" />
+      <item itemvalue="Python tests.Unittests in test.py" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Unittests in test.py" />
         <item itemvalue="Python tests.Unittests for test.TestBot" />
       </list>
     </recent_temporary>
@@ -298,6 +314,18 @@
     <history-entry file="Unittests_for_test_TestBot - 2018.12.18 at 16h 59m 29s.xml">
       <configuration name="Unittests for test.TestBot" configurationId="tests" />
     </history-entry>
+    <history-entry file="Unittests_in_test_py - 2018.12.18 at 17h 17m 20s.xml">
+      <configuration name="Unittests in test.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_py - 2018.12.18 at 17h 18m 42s.xml">
+      <configuration name="Unittests in test.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_py - 2018.12.18 at 17h 18m 52s.xml">
+      <configuration name="Unittests in test.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_py - 2018.12.18 at 17h 19m 00s.xml">
+      <configuration name="Unittests in test.py" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -308,7 +336,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32907802" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.14326242" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.19574468" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -389,6 +417,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="112" selection-start-line="8" selection-start-column="112" selection-end-line="8" selection-end-column="112" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/bot.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42">
@@ -399,24 +437,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="1" column="25" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-            <marker date="1545141524846" expanded="true" signature="77:82" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/class_bot.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="37" column="12" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="12" />
+        <state relative-caret-position="388">
+          <caret line="95" column="38" lean-forward="true" selection-start-line="95" selection-start-column="38" selection-end-line="95" selection-end-column="38" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
-            <marker date="1545141940203" expanded="true" signature="1454:1469" ph="..." />
+            <marker date="1545142783270" expanded="true" signature="1601:2867" ph="..." />
           </folding>
         </state>
       </provider>
