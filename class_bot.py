@@ -5,7 +5,6 @@ from bs4 import BeautifulSoup
 import random
 import json
 import time
-import doctest
 
 
 json_list = data_base.base_1
@@ -30,7 +29,7 @@ def find_weather(city, message, bot):
 def dump(response_dict):
     """Фнкция сброса данных в папка Data"""
     data_base.test_dict_list.append(response_dict)
-    if len(data_base.test_dict_list) >= 5:
+    if len(data_base.test_dict_list) >= 20:
         with open("Data/%s.json" % str(time.time()), 'wt', encoding='utf8') as file:
             json.dump(data_base.test_dict_list, file, ensure_ascii=False)
         data_base.test_dict_list.clear()
